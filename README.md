@@ -6,8 +6,11 @@
 3. Зашифруйте домашний каталог пользователя с помощью eCryptfs.
 
 sudo apt-get install ecryptfs-utils
+
 sudo add cryptouser
+
 sudo adduser cryptouser
+
 sudo ecryptfs-migrate-home -u ska
 
 ![1](https://github.com/BOSe1337/host/blob/main/1.JPG)
