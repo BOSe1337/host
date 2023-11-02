@@ -28,23 +28,43 @@ sudo ecryptfs-migrate-home -u ska
 ![5](https://github.com/BOSe1337/host/blob/main/5.JPG)
 
 lsblk
+
 sudo dd if=/dev/urandom of=/root/secret.key bs=1024 count=2
+
 sudo chmod 0400 /root/secret.key
+
 sudo apt-get install cryptsetup
+
 cryptsetup luksFormat /dev/sdb /root/secret.key
+
 sudo cryptsetup luksFormat /dev/sdb /root/secret.key
+
 sudo cryptsetup luksAddKey /dev/sdb /root/secret.key --key-file=/root/secret.key
+
 sudo cryptsetup luksOpen /dev/sdb secret --key-file=/root/secret.key
+
 sudo cryptsetup resize secret
+
 sudo nano /root/secret.key
+
 sudo cryptsetup resize secret
+
 lsblk
+
 mkfs.ext4 /dev/mapper/secret
+
 cryptsetup -v status secret
+
 lsblk
+
 cryptsetup luksDump /dev/sdb
+
 sudo mkdir -p /secret
+
 sudo chmod 755 /secret
+
 mount /dev/mapper/secret /secret
+
 df -h
+
 lsblk
